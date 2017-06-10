@@ -22,8 +22,9 @@ function cryptosquare(str){
   //outputs results to html
   for (i = 0; i < charTotal; i+=chunk) {
     outputArray = strArray.slice(i,i+chunk);
-    outputStr = outputArray.join('|');
+    outputStr = outputArray.join(',');
     $("body").append("<H5>|"+outputStr+"|</H5>");
+    $("body").append("<hr>");
   }
 
 
@@ -34,5 +35,5 @@ function cryptosquare(str){
 }
 
 $(document).ready(function() {
-  cryptosquare("hello there im saul");
+  cryptosquare("test words are fun for everyone");
 });
