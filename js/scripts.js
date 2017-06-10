@@ -5,11 +5,21 @@ function cryptosquare(str){
   var strArray = str.split("");
   var charTotal = strArray.length;
   var columns = Math.floor(Math.sqrt(charTotal));
-  var rows = Math.ceil(Math.sqrt(charTotal));
+  var rows = Math.floor(Math.sqrt(charTotal));
 
-  // if (charTotal % columns === 0){
-  //   rows = columns;
-  // }
+  //assigns rows value based on length of inputted string
+  if (charTotal - (columns*columns) > columns){
+    rows += 2;
+  } else if (charTotal - (columns*columns) > 0) {
+    rows += 1;
+  } else {
+    rows = rows;
+  }
+
+
+
+
+
 
   $("body").append("<H5>Character Count: "+charTotal+"</H5>");
   $("body").append("<H5>Columns: "+columns+"</H5>");
@@ -17,5 +27,5 @@ function cryptosquare(str){
 }
 
 $(document).ready(function() {
-  cryptosquare("bearsaa");
+  cryptosquare("11");
 });
